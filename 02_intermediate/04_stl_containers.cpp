@@ -14,7 +14,7 @@ int main (){
     std::cout << " " << std::endl;
     
     nums.pop_back(); // remove last element
-    std::cout << " Sie after pop: " << nums.size() << std::endl;
+    std::cout << " Size after pop: " << nums.size() << std::endl;
     std::cout << " Front: " << nums.front() << ", Back: " << nums.back() << std::endl;
 
     std::map<std::string, int> ages; 
