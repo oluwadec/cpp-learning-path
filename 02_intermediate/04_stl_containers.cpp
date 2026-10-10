@@ -1,38 +1,54 @@
+// Topic 4: STL Containers
+// Introduces std::vector, std::map and std::set.
+//
+// Compile: g++ -std=c++17 -Wall -Wextra -o stl_containers 04_stl_containers.cpp
+// Run:     ./stl_containers
+
 #include <iostream>
-#include <vector>
 #include <map>
 #include <set>
+#include <string>
+#include <vector>
 
-int main (){
+int main() {
+    // --- vector: a resizable array ---
     std::vector<int> nums = {5, 2, 9};
-    nums.push_back(14); // add to end
-    nums.insert(nums.begin(), 1); // insert at front
+    nums.push_back(14);                // add to the end
+    nums.insert(nums.begin(), 1);      // insert at the front
 
-    for (size_t i =0; i < nums.size(); ++i) {
-        std::cout << nums[i] << " ";
+    std::cout << "Vector: ";
+    for (std::size_t i = 0; i < nums.size(); ++i) {
+        std::cout << nums[i] << ' ';
     }
-    std::cout << " " << std::endl;
-    
-    nums.pop_back(); // remove last element
-    std::cout << " Size after pop: " << nums.size() << std::endl;
-    std::cout << " Front: " << nums.front() << ", Back: " << nums.back() << std::endl;
+    std::cout << '\n';
 
-    std::map<std::string, int> ages; 
-    ages["Logo"] = 21;
-    ages["seun"] = 26;
-    ages["seyi"] = 23;
+    nums.pop_back();                   // remove the last element
+    std::cout << "Size after pop: " << nums.size() << '\n';
+    std::cout << "Front: " << nums.front() << ", Back: " << nums.back() << '\n';
 
- for (const auto &pair : ages) {
-    std::cout << pair.first << " -> " << pair.second << std::endl;
- }
+    // --- map: key -> value pairs, sorted by key ---
+    std::map<std::string, int> ages;
+    ages["Ada"] = 21;
+    ages["Bola"] = 26;
+    ages["Chidi"] = 23;
 
- if (ages.find("seun") != ages.end()) {
-    std::cout << " seun is present " << std::endl;
- }
+    std::cout << "\nAges:\n";
+    for (const auto& entry : ages) {
+        std::cout << entry.first << " -> " << entry.second << '\n';
+    }
 
- std::set<int> uniqueMarks = { 70, 55, 70, 90, 55};
- for ( int m : uniqueMarks) std::cout << m << " "; // 55 70 90
- std::cout << " " << std::endl;
+    if (ages.find("Bola") != ages.end()) {
+        std::cout << "Bola is present\n";
+    }
 
- return 0;
- }
+    // --- set: unique values, automatically sorted ---
+    std::set<int> uniqueMarks = {70, 55, 70, 90, 55};
+
+    std::cout << "\nUnique marks: ";
+    for (int mark : uniqueMarks) {
+        std::cout << mark << ' ';      // 55 70 90
+    }
+    std::cout << '\n';
+
+    return 0;
+}
