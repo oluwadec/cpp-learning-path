@@ -1,7 +1,7 @@
-// Topic 4: STL Containers
+// Topic 11: STL Containers
 // Introduces std::vector, std::map and std::set.
 //
-// Compile: g++ -std=c++17 -Wall -Wextra -o stl_containers 04_stl_containers.cpp
+// Compile: g++ -std=c++17 -Wall -Wextra -o stl_containers 11_stl_containers.cpp
 // Run:     ./stl_containers
 
 #include <iostream>
